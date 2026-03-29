@@ -56,4 +56,10 @@
     githubId = 8916363;
     name = "Nikita Wootten";
   };
+  nouritsu = {
+    email = "ab@nouritsu.com";
+    github = "nouritsu";
+    githubId = 113834791;
+    name = "Aneesh B";
+  };
 }
