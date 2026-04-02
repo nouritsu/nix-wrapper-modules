@@ -47,7 +47,8 @@ let
     in
     if config.v2-settings then v: v else v: recurse [ ] v;
 
-  mkRule = # "window-rules" "layer-rules"
+  mkRule =
+    # "window-rules" "layer-rules"
     node: r:
     let
       matches = map (m: { match = _: { props = m; }; }) (r.matches or [ ]);
@@ -62,7 +63,8 @@ let
     {
       ${node} = matches ++ excludes ++ other;
     };
-  attrAsArg = # "workspace" "output"
+  attrAsArg =
+    # "workspace" "output"
     node:
     lib.mapAttrsToList (
       n: v: {
@@ -318,7 +320,7 @@ in
     ${lib.getExe config.package} validate -c ${config.constructFiles.generatedConfig.path}
     runHook postInstall
   '';
-  config.package = pkgs.niri;
+  config.package = lib.mkDefault pkgs.niri;
   config.env.NIRI_CONFIG = config."config.kdl".path;
   config.constructFiles.generatedConfig = {
     relPath = "${config.binName}-config.kdl";
