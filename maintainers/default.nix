@@ -79,4 +79,10 @@
     githubId = 113834791;
     name = "Aneesh B";
   };
+  jtrrll = {
+    name = "Jackson Terrill";
+    email = "jacksonterrill3@gmail.com";
+    github = "jtrrll";
+    githubId = 77407057;
+  };
 }
